@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+   
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 97vh;
+}
+
+.messages-container {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.message-container {
+  display: flex;
+  align-items: flex-start;
+  margin: 10px;
+}
+
+.message-bubble {
+  background-color: #f8f9fa;
+  padding: 10px 16px;
+  border-radius: 50px;
+  max-width: 60%;
+  word-wrap: break-word;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
+}
+
+.sender-message-container {
+  justify-content: flex-end;
+}
+
+.sender-message-bubble {
+  background-color: #FFCDD2;
+  color: rgb(20, 18, 18);
+}
+
+.message-input-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: rgb(7, 7, 7);
+}
+
+#messageInput {
+  flex-grow: 1;
+  margin-right: 6px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  height: 30px;
+  font-size: 16px;
+  background-color: #f8f9fa;
+  padding: 10px 16px 10px 16px;
+}
+
+#sendButton {
+  background-color: #FFCDD2;
+  border-radius: 50px;
+  outline: none;
+  border: none;
+  padding: 14px 16px 14px 16px;
+  color: #121111;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#sendButton:hover{
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
+}
+
+#sendButton:active {
+  background-color: #FFCDD2;
+}
+  </style>
+  <title>Katral Chat</title>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="messages-container" id="messages"></div>
+    <div class="message-input-container">
+      <input type="text" id="messageInput" placeholder="Type a message...">
+      <button id="sendButton">Send</button>
+    </div>
+  </div>
+
+  <script>
+    
+    const messagesDiv = document.getElementById('messages');
+    const messageInput = document.getElementById('messageInput');
+    const sendButton = document.getElementById('sendButton');
+    const ws = new WebSocket('ws://localhost:3000');
+  
+    ws.addEventListener('message', (event) => {
+      const message = event.data;
+      displayMessage(message);
+    });
+  
+    sendButton.addEventListener('click', () => {
+      const message = messageInput.value;
+      ws.send(message);
+      displayMessage(message, true);
+      messageInput.value = '';
+    });
+  
+    function displayMessage(message, isSender = false) {
+      const messageContainer = document.createElement('div');
+      const messageElement = document.createElement('div');
+      messageElement.textContent = message;
+      
+      messageContainer.classList.add('message-container');
+      
+      if (isSender) {
+        messageContainer.classList.add('sender-message-container');
+        messageElement.classList.add('message-bubble', 'sender-message-bubble');
+      } else {
+        messageElement.classList.add('message-bubble');
+      }
+      
+      messageContainer.appendChild(messageElement);
+      messagesDiv.appendChild(messageContainer);
+      
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Home</title>
+        <link rel="icon" type="image/x-icon" href="F:\SynologyDrive\Computer\College\SEM-5,6\Csp\logo\5103_ka-tamil-script.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="StyleSheet/StyleSheet_Katral.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="lighter">
+                <div class="logo">
+                    <img src="/image/logoo.jpg" class="center">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="navbar">
+                <nav>
+                    <a href="Katral-Home.html">Home</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Materials 
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="Java-Katral.html">Java</a>
+                            <a href="JavaScript-Katral.html">JavaSricpt</a>
+                            <a href="HTML-katral.html">HTML</a>
+                            <a href="CSS-Katral.html">CSS</a>
+                            <a href="Python-Katral.html">Python</a>
+                        </div>
+                    </div>
+                    <a href="Community-Katral.html">Community</a>
+                    <a href="Katral-Chat.html">Chat</a>
+                    <a href="Video-Katral.html">Video</a>
+                    <a href="Contact_Us-Katral.html"> Contact Us</a>
+                    <a href="To-Do-Katral.html">To-Do</a>
+                    <a href = "Login-Katral.html"> Login In</a>
+                </nav>
+                <div class="search-container">
+                    <form action="/action_page.php">
+                      <input type="text" placeholder="Search.." name="search">
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        </div>
+        <div class="container-fluid">
+          <div style="background-color: darkgrey;padding: 20px;">
+            <h1 style="text-align: center;"><b>JAVA</b></h1>
+          </div> 
+        </div>
+        <div class="head">
+          <p style="text-align: center;"><mark>Here, you can find the Materials for JAVA.</mark></p>
+        </div>
+        <div class="row">
+          <div class="col-5">
+              <img class="myImages"S src="/image/Java.jpg" alt="Java" style="width:600px;height:440px;">
+              <div id="myModal" class="modal">
+                  <span class="close">&times;</span>
+                  <img class="modal-content" id="img01">
+                  <div id="caption"></div>
+              </div>
+          </div>
+          <div class="col-s-7" style="text-align: center;">
+              <h1 style="background-color: aquamarine;">What is Java?</h1>
+              <p style="padding: 0%;background-color: aliceblue;">
+                  <b>Java</b>is a programming language and a platform. Java is a high level, robust, object-oriented and secure programming language.
+                  
+                  Java was developed by Sun Microsystems (which is now the subsidiary of Oracle) in the year 1995. James Gosling is known as the father of Java. Before Java, its name was Oak. Since Oak was already a registered company, so James Gosling and his team changed the name from Oak to Java.
+              </p>
+              <h1 style="background-color: aquamarine;">Example</h1>
+              <p style="padding: 0%;background-color: aliceblue;color: green;">
+                  // A Java program to print "Hello World"
+              </p>
+              <img src="/image/Example-Java.jpg" style="height: 300px;width: 500px">
+          </div>
+          <hr>
+          <div class="container-fluid">
+            <div style="background-color: darkgrey;padding: 20px;">
+              <h1 style="text-align: center;"><b>Application</b></h1>
+            </div> 
+          </div>
+          <div class="col-s-7" style="text-align: center;">
+            <h1 style="background-color: aquamarine;">Object Oriented Programming (OOPs) Concept in Java</h1>
+            <p style="padding: 0%;background-color: aliceblue;">
+              As the name suggests, Object-Oriented Programming or Java OOPs concept refers to languages that use objects in programming, they use objects as a primary source to implement what is to happen in the code. Objects are seen by the viewer or user, performing tasks you assign.
+
+              Object-oriented programming aims to implement real-world entities like inheritance, hiding, polymorphism, etc. in programming. The main aim of OOPs is to bind together the data and the functions that operate on them so that no other part of the code can access this data except that function.
+            </p>
+          
+        </div>
+          <div class="row">
+            <div class="col-5">
+              
+          
+              <img class="myImages" src="/image/java-application.png" alt="Java" style="width:600px;height:440px; display: block; margin: auto;">
+
+            
+              
+                
+                <div id="myModal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="img01">
+                    <div id="caption"></div>
+                </div>
+            </div>
+            <div class="col-s-7" style="text-align: center;">
+                <p style="padding: 0%;background-color: aliceblue;">
+                    
+                </p>
+                
+            </div>
+            <hr>
+      </div>
+    </body>
+    <!----------------------for zoom image-map--------------------------------------->
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+            
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById("myImg");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        img.onclick = function(){
+          modal.style.display = "block";
+          modalImg.src = this.src;
+          captionText.innerHTML = this.alt;
+        }
+            
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+            
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+          modal.style.display = "none";
+        }
+    </script>
+    <!--------------------------------------scroll down ------------------------------------------>
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+        
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+    </script> 
+</html>

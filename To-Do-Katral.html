@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#062e3f">
+    <meta name="Description" content="A dynamic and aesthetic To-Do List WebApp.">
+
+    <!-- Google Font: Quick Sand -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <!-- font awesome (https://fontawesome.com) for basic icons; source: https://cdnjs.com/libraries/font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+
+    
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Work Sans', sans-serif;
+            min-height: 100vh;
+            padding-top: 3%;
+            background-image: linear-gradient(100deg, #ffffff, #FFCDD2);
+            color: #e2d5d5;
+            overflow: hidden;
+            transition: 0.3s linear;
+        }
+        
+        #header, #form, #datetime {
+            margin: 0 1rem;
+            min-height: 10vh;
+            width: 100%;
+        }
+        
+        #header {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            font-size: 3rem;
+            min-height: 25vh;
+            width: 100%;
+        }
+        
+        #title {
+            border-right: solid 3px rgba(0, 0, 0, 0.75);
+            white-space: pre;
+            overflow: hidden;     
+            letter-spacing: 0.20rem;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            max-width: 480px;
+            animation: animated-text 2s steps(11,end) 0.5s 1 normal both,
+                animated-cursor 750ms steps(11,end) infinite;
+        }
+        
+        @keyframes animated-text {
+            from {width: 0%;}
+            to {width: 480px;}
+        }
+        
+        @keyframes animated-cursor {
+            from {border-right-color: rgba(0, 0, 0, 0.75);}
+            to {border-right-color: transparent;}
+        }
+        
+        form {
+            display: flex;
+            font-size: 1.7rem;
+            justify-content: center;
+            margin: 15px 0;
+            padding: 0.8rem;
+            width: 100%;
+        }
+        
+        form input {
+            padding: 10px;
+            font-size: 17px;
+            border: none;
+            outline: none;
+            border-top-left-radius: 17px;
+            border-bottom-left-radius: 17px;
+            max-width: 500px;
+            background-color: #1a181a;
+            color: rgb(247, 226, 223);
+            transition: background-color 200ms ease-in-out;
+            width: 100%;
+        }
+        
+        form input:hover {
+            cursor: text;
+            background-color: rgb(0, 0, 0);
+        }
+        
+        button {
+            border: none;
+            outline: none; 
+            transition: box-shadow 200ms ease, background-color 200ms ease-in-out;
+            background-color: rgb(247, 226, 223);
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            font-size: 17px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            min-width: 100px;
+        }
+        
+        button:hover {
+            cursor: pointer;
+            background-color: white;
+            box-shadow: #fff8 0 0 10px;
+        }
+        
+        #myUnOrdList {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+        }
+        
+        .todo-list {
+            min-width: 25%;
+            list-style: none;
+        }
+        
+        .todo {
+            margin: 1rem;
+            font-size: 19px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.25em 0.5em;
+            border-radius: 30px;
+            background-color: rgb(17, 16, 17);
+            transition: background-color 200ms ease-in-out;
+        }
+        
+        .todo li {
+            padding: 7px;
+            font-size: 20px;
+            flex: 1;
+            border-radius: 30px;
+            overflow-wrap: anywhere;
+        }
+        
+        .check-btn, .delete-btn {
+            font-size: 19px;
+            cursor: pointer;
+            width: 2em;
+            height: 2em;
+            border-radius: 0%;
+            margin: 0 5px;
+        }
+        
+        .todo-item {
+            padding: 0rem 0.5rem;
+        }
+        
+        .fa-trash, .fa-check { 
+            pointer-events: none;
+        }
+        
+        .completed {
+            transition: 0.2s;
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+        
+        .fall {
+            transition: 0.5s;
+            transform: translateY(45rem) rotateZ(45deg);
+            opacity: 0;
+        }
+        
+        @media only screen and (max-width: 1000px) {
+            .flexrow-container {
+                align-self: unset;
+                margin-right: 0;
+            }
+        }
+        
+        @media only screen and (max-width: 800px) {
+            #header {
+                font-size: 2rem;
+            }
+        
+            #title {
+                animation: 
+                    animated-text 3s steps(16,end) 0.5s 1 normal both,
+                    animated-cursor 750ms steps(16,end) infinite;
+                margin-bottom: 10px;
+                margin-top: 30px;
+                max-width: 330px;
+            }
+        }
+        
+        @media only screen and (max-width: 400px) {
+            #header {
+                font-size: 1.5rem;
+            }
+        
+            #title {
+                animation: 
+                    animated-text 3.5s steps(16,end) 0.5s 1 normal both,
+                    animated-cursor 750ms steps(16,end) infinite;
+                max-width: 255px;
+            }
+        
+            form {
+                align-items: center;
+                flex-direction: column;
+            }
+        
+            form input {
+                border-radius: 17px;
+            }
+        
+            form button {
+                border-radius: 15px;
+                margin-top: 15px;
+                width: 50%;
+            }
+        }
+        
+    </style>
+    <title>KATRAL TO-DO </title>
+
+
+</head>
+
+<body>
+    <div id = "header">
+        <div class="flexrow-container">
+           
+        </div>
+        <h1 id="title" style="color: #100f0f">Just do it.<div id="border"></div></h1>
+        
+    </div>
+
+  <div id="form">
+        <form>
+            <input class="todo-input" type="text" placeholder="Add a task.">
+            <button class="todo-btn" type="submit">I Got This!</button>
+        </form>
+    </div>
+
+    <!-- div for top left corner -->
+       
+    <div>
+        <p><span id="datetime"></span></p>
+        <script src="time.js"></script>
+    </div>
+
+  <div id="myUnOrdList">
+        <ul class="todo-list">
+            <!-- (Basic Format)
+            <div class="todo">
+                items added to this list:
+                <li></li>
+                <button>delete</button>
+                <button>check</button>
+            </div> -->
+        </ul>
+    </div>
+    <script>
+        // Selectors
+
+const toDoInput = document.querySelector('.todo-input');
+const toDoBtn = document.querySelector('.todo-btn');
+const toDoList = document.querySelector('.todo-list');
+
+// Event Listeners
+
+toDoBtn.addEventListener('click', addToDo);
+toDoList.addEventListener('click', deletecheck);
+document.addEventListener("DOMContentLoaded", getTodos);
+
+// Functions
+
+function addToDo(event) {
+    // Prevents form from submitting / Prevents form from reloading
+    event.preventDefault();
+
+    // toDo DIV
+    const toDoDiv = document.createElement("div");
+    toDoDiv.classList.add('todo');
+
+    // Create LI
+    const newToDo = document.createElement('li');
+    if (toDoInput.value === '') {
+        alert("You must write something!");
+    } else {
+        newToDo.innerText = toDoInput.value;
+        newToDo.classList.add('todo-item');
+        toDoDiv.appendChild(newToDo);
+
+        // Adding to local storage
+        savelocal(toDoInput.value);
+
+        // check button
+        const checked = document.createElement('button');
+        checked.innerHTML = '<i class="fas fa-check"></i>';
+        checked.classList.add('check-btn');
+        toDoDiv.appendChild(checked);
+
+        // delete button
+        const deleted = document.createElement('button');
+        deleted.innerHTML = '<i class="fas fa-trash"></i>';
+        deleted.classList.add('delete-btn');
+        toDoDiv.appendChild(deleted);
+
+        // Append to list
+        toDoList.appendChild(toDoDiv);
+
+        // Clearing the input
+        toDoInput.value = '';
+    }
+}
+
+function deletecheck(event) {
+    const item = event.target;
+
+    // Delete
+    if (item.classList[0] === 'delete-btn') {
+        item.parentElement.classList.add("fall");
+
+        // removing local todos
+        removeLocalTodos(item.parentElement);
+
+        item.parentElement.addEventListener('transitionend', function () {
+            item.parentElement.remove();
+        });
+    }
+
+    // Check
+    if (item.classList[0] === 'check-btn') {
+        item.parentElement.classList.toggle("completed");
+    }
+}
+
+// Saving to local storage
+function savelocal(todo) {
+    let todos;
+    if (localStorage.getItem('todos') === null) {
+        todos = [];
+    } else {
+        todos = JSON.parse(localStorage.getItem('todos'));
+    }
+
+    todos.push(todo);
+    localStorage.setItem('todos', JSON.stringify(todos));
+}
+
+function getTodos() {
+    let todos;
+    if (localStorage.getItem('todos') === null) {
+        todos = [];
+    } else {
+        todos = JSON.parse(localStorage.getItem('todos'));
+    }
+
+    todos.forEach(function (todo) {
+        // toDo DIV
+        const toDoDiv = document.createElement("div");
+        toDoDiv.classList.add("todo");
+
+        // Create LI
+        const newToDo = document.createElement('li');
+        newToDo.innerText = todo;
+        newToDo.classList.add('todo-item');
+        toDoDiv.appendChild(newToDo);
+
+        // check button
+        const checked = document.createElement('button');
+        checked.innerHTML = '<i class="fas fa-check"></i>';
+        checked.classList.add("check-btn");
+        toDoDiv.appendChild(checked);
+
+        // delete button
+        const deleted = document.createElement('button');
+        deleted.innerHTML = '<i class="fas fa-trash"></i>';
+        deleted.classList.add("delete-btn");
+        toDoDiv.appendChild(deleted);
+
+        // Append to list
+        toDoList.appendChild(toDoDiv);
+    });
+}
+
+function removeLocalTodos(todo) {
+    let todos;
+    if (localStorage.getItem('todos') === null) {
+        todos = [];
+    } else {
+        todos = JSON.parse(localStorage.getItem('todos'));
+    }
+
+    const todoIndex = todos.indexOf(todo.children[0].innerText);
+    todos.splice(todoIndex, 1);
+    localStorage.setItem('todos', JSON.stringify(todos));
+}
+
+    </script> 
+</body>
+</html>

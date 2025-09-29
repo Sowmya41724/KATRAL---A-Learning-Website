@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Home</title>
+        <link rel="icon" type="image/x-icon" href="F:\SynologyDrive\Computer\College\SEM-5,6\Csp\logo\5103_ka-tamil-script.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="StyleSheet/StyleSheet_Katral.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="lighter">
+                <div class="logo">
+                    <img src="/image/logoo.jpg" class="center">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="navbar">
+                <nav>
+                    <a href="Katral-Home.html">Home</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Materials 
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="Java-Katral.html">Java</a>
+                            <a href="JavaScript-Katral.html">JavaSricpt</a>
+                            <a href="HTML-katral.html">HTML</a>
+                            <a href="CSS-Katral.html">CSS</a>
+                            <a href="Python-Katral.html">Python</a>
+                        </div>
+                    </div>
+                    <a href="Community-Katral.html">Community</a>
+                    <a href="Katral-Chat.html">Chat</a>
+                    <a href="Video-Katral.html">Video</a>
+                    <a href="Contact_Us-Katral.html"> Contact Us</a>
+                    <a href="To-Do-Katral.html">To-Do</a>
+                    <a href = "Login-Katral.html"> Login In</a>
+                </nav>
+                <div class="search-container">
+                    <form action="/action_page.php">
+                      <input type="text" placeholder="Search.." name="search">
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        </div>
+        <div class="container-fluid">
+            <div style="background-color: darkgrey;padding: 20px;">
+              <h1 style="text-align: center;"><b>CSS</b></h1>
+            </div> 
+          </div>
+          <div class="head">
+            <p style="text-align: center;"><mark>Here, you can find the Materials for CSS.</mark></p>
+          </div>
+          <div class="row">
+            <div class="col-5">
+                <img class="myImages"S src="/image/CSS.jpg" alt="Java" style="width:600px;height:440px;">
+                <div id="myModal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="img01">
+                    <div id="caption"></div>
+                </div>
+            </div>
+            <div class="col-s-7" style="text-align: center;">
+                <h1 style="background-color: aquamarine;">What is CSS?</h1>
+                <p style="padding: 0%;background-color: aliceblue;">
+                    <b>Cascading Style Sheets (CSS)</b> is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.
+                </p>
+                <h1 style="background-color: aquamarine;">What can CSS do?</h1>
+                <p style="padding: 0%;background-color: aliceblue;color: green;">
+                    CSS (Cascading Style Sheets) is used to style and layout web pages — for example, to alter the font, color, size, and spacing of your content, split it into multiple columns, or add animations and other decorative features.
+                </p>
+            </div>
+            <hr>
+            <div class="container-fluid">
+              <div style="background-color: darkgrey;padding: 20px;">
+                <h1 style="text-align: center;"><b>Application</b></h1>
+              </div> 
+            </div>
+            <div class="row">
+              <div class="col-5">
+                  <img class="myImages" src="/image/Example-CSS.jpg" alt="Java" style="width:600px;height:440px;">
+                  <div id="myModal" class="modal">
+                      <span class="close">&times;</span>
+                      <img class="modal-content" id="img01">
+                      <div id="caption"></div>
+                  </div>
+              </div>
+              <div class="col-s-7" style="text-align: center;">
+                  <p style="padding: 0%;background-color: aliceblue;">
+                    Some of the most prominent applications of CSS include:
+Controlling Effects and Flash Animation.<br>
+Managing Dynamic Web Templates.<br>
+e-Commerce.<br>
+Social Media.<br>
+Image File Management.<br>
+Ease of Accessibility.<br>
+Website Maintenance.<br>
+Server-Side and End-User Representation.<br>
+                  </p>
+                  <h1>What is the use of CSS in real Life?</h1>
+                  <p>The use of CSS streamlines the process of placing and handling flash elements on websites. By applying the built-in Flash files, styling sheets, and frameworks in CSS, developers can easily create animations, make movies, and update effects on web pages.</p>
+                  <p><mark>for more information, please check the given links</mark></p>
+                  <a href="https://www.w3schools.com/css/"><mark>link-1</mark></a>
+                  <a href="https://en.wikipedia.org/wiki/CSS"><mark>link-2</mark></a>
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><mark>link-3</mark></a>
+              </div>
+              <hr>
+        </div>
+      </body>
+    <!----------------------for zoom image-map--------------------------------------->
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+            
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById("myImg");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        img.onclick = function(){
+          modal.style.display = "block";
+          modalImg.src = this.src;
+          captionText.innerHTML = this.alt;
+        }
+            
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+            
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+          modal.style.display = "none";
+        }
+    </script>
+    <!--------------------------------------scroll down ------------------------------------------>
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+        
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+    </script> 
+</html>

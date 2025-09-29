@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Contact Us | Katral</title>
+        <link rel="icon" type="image/x-icon" href="F:\SynologyDrive\Computer\College\SEM-5,6\Csp\logo\5103_ka-tamil-script.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="StyleSheet/StyleSheet_Katral.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .error {color: #FF0000;}
+        </style>
+        <script>
+            function validateForm() {
+              let x = document.forms["myForm"]["fullname"].value;
+              if (x == "") {
+                alert("Name must be filled out");
+                return false;
+              }
+      
+              let y = document.forms["myForm"]["DOB"].value;
+              if (y == "") {
+                alert("Date of Birth must be filled out");
+                return false;
+              }
+      
+              let z = document.forms["myForm"]["Gmail"].value;
+              if (z == "") {
+                alert("G-mail must be filled out");
+                return false;
+              }
+      
+              let p = document.forms["myForm"]["PhoneNumber"].value;
+              if (p == "") {
+                alert("Phone number must be filled out");
+                return false;
+              }
+      
+            }
+        </script> 
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="lighter">
+                <div class="logo">
+                    <img src="/image/logoo.jpg" class="center">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="navbar">
+                <nav>
+                    <a href="Katral-Home.html">Home</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Materials 
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="Java-Katral.html">Java</a>
+                            <a href="JavaScript-Katral.html">JavaSricpt</a>
+                            <a href="HTML-katral.html">HTML</a>
+                            <a href="CSS-Katral.html">CSS</a>
+                            <a href="Python-Katral.html">Python</a>
+                        </div>
+                    </div>
+                    <a href="Community-Katral.html">Community</a>
+                    <a href="Katral-Chat.html">Chat</a>
+                    <a href="Video-Katral.html">Video</a>
+                    <a href="Contact_Us-Katral.html"> Contact Us</a>
+                    <a href="To-Do-Katral.html">To-Do</a>
+                    <a href = "Login-Katral.html"> Login In</a>
+                </nav>
+                <div class="search-container">
+                    <form action="/action_page.php">
+                      <input type="text" placeholder="Search.." name="search">
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        </div>
+        <div class="container-fluid">
+            <div style="background-color: darkgrey;padding: 20px;">
+              <h1 style="text-align: center;"><b>Contact Us</b></h1>
+            </div> 
+          </div>
+          <div class="container">
+            <div style="text-align:center">
+              <p>Fill the form to contact us:</p>
+            
+            </div>
+            <div class="row2">
+              <div class="column2">
+                <img class="myImages" id="myImg"src="/image/QUOTES OF THE DAY.jpeg" style="width:80%;height: 40%;;">
+              </div>
+              <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+              </div>
+              <div class="column2">
+                <div class="con">
+                  <form  name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+                    <label for="fname"><i class="fa fa-user"></i> Full Name<span class="error">*</span></label>
+                    <input type="text" id="fname" name="fullname" placeholder="Your name.." >
+                    <label for="DOB"><i class="fa fa-birthday-cake"></i> Date Of Birth<span class="error">*</span></label>
+                    <input type="text" id="numb" name="DOB" placeholder="Your DOB..">
+                    <label for="gender"><i class="fa fa-child"></i> Gender</label>
+                      <input type="radio" name="gender" value="female">Female
+                      <input type="radio" name="gender" value="male">Male
+                      <input type="radio" name="gender" value="other">Other
+                      <input type="radio" name="gender" value="rathernotsay">Rather not say
+                      <br><br>
+                    <label for="gmail"><i class="fa fa-envelope"></i> Gmail<span class="error">*</span></label>
+                    <input type="text" id="gmail" name="Gmail" placeholder="Your gmail..">
+                    <label for="phoneno"><i class="fa fa-phone"></i> Phone Number<span class="error">*</span></label>
+                    <input type="text" id="phoneno" name="PhoneNumber" placeholder="Your phone no.." onblur="phonenumber(document.myForm.PhoneNumber)"/>
+                    <label for="country"><i class="fa fa-institution"></i> Country</label>
+                    <select id="country" name="country">
+                      <option value ="India">India</option>
+                      <option value="australia">Australia</option>
+                      <option value="canada">Canada</option>
+                      <option value="usa">USA</option>
+                    </select>
+                    <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                    <input type="text" id="adr" name="address" placeholder="Your address..">
+                    <label for="subject"> Subject</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+                    <p style="font-size:large;padding: 0px;">If you want to attach any files:<i class="fa fa-paperclip"></i></p>
+                    <input type="file" id="myFile" name="filename">
+                    <br><br>
+                    <input type="submit"  name="submit" value="Submit"/>
+                  </form>
+                </div>
+              </div>
+              <h1 style="text-align: center;">Thanks for your information it helps us evolve</h1>
+              
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="lighter1">
+            <div class="w3-center w3-black w3-padding-small">
+              <div class="w3-xlarge w3-section">
+                <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                <i class="fa fa-instagram w3-hover-opacity"></i>
+                <i class="fa fa-snapchat w3-hover-opacity"></i>
+                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                <i class="fa fa-twitter w3-hover-opacity"></i>
+                <i class="fa fa-linkedin w3-hover-opacity"></i>
+              </div>
+            
+              <p style="text-align: center;color:whitesmoke;">
+                @2024-INDIA-All rights reserved.<br>The Copyrights &copy; this website is owned by Katral Team.
+              </p>
+            </div>
+          </div>
+      </div>
+      <!------------------phone number-------------------->
+      <script>
+        function phonenumber(inputtxt)
+        {
+          var phoneno = /^\d{10}$/;
+          if(inputtxt.value.match(phoneno))
+          {
+            return true;
+          }
+          else
+          {
+            alert("Not a valid Phone Number");
+            return false;
+          }
+        }
+    
+      </script>
+      </body>
+</html>
+  

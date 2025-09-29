@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Home</title>
+        <link rel="icon" type="image/x-icon" href="F:\SynologyDrive\Computer\College\SEM-5,6\Csp\logo\5103_ka-tamil-script.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="StyleSheet/StyleSheet_Katral.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="lighter">
+                <div class="logo">
+                    <img src="/image/logoo.jpg" class="center">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="navbar">
+                <nav>
+                    <a href="Katral-Home.html">Home</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Materials 
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="Java-Katral.html">Java</a>
+                            <a href="JavaScript-Katral.html">JavaSricpt</a>
+                            <a href="HTML-katral.html">HTML</a>
+                            <a href="CSS-Katral.html">CSS</a>
+                            <a href="Python-Katral.html">Python</a>
+                        </div>
+                    </div>
+                    <a href="Community-Katral.html">Community</a>
+                    <a href="Katral-Chat.html">Chat</a>
+                    <a href="Video-Katral.html">Video</a>
+                    <a href="Contact_Us-Katral.html"> Contact Us</a>
+                    <a href="To-Do-Katral.html">To-Do</a>
+                    <a href = "Login-Katral.html"> Login In</a>
+                <div class="search-container">
+                    <form action="/action_page.php">
+                      <input type="text" placeholder="Search.." name="search">
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        </div>
+        <div class="container-fluid">
+          <div style="background-color: darkgrey;padding: 20px;">
+            <h1 style="text-align: center;"><b>Introduction to Python</b></h1>
+          </div> 
+        </div>
+        <div class="head">
+          <p style="text-align: center;"><mark>Here, you can find the Materials for Python.</mark></p>
+        </div>
+        <div class="row">
+          <div class="col-5">
+              <img class="myImages"S src="/image/Python.jpg" alt="Java" style="width:600px;height:440px;">
+              <div id="myModal" class="modal">
+                  <span class="close">&times;</span>
+                  <img class="modal-content" id="img01">
+                  <div id="caption"></div>
+              </div>
+          </div>
+          <div class="col-s-7" style="text-align: center;">
+              <h1 style="background-color: aquamarine;">What is Python?</h1>
+              <p style="padding: 0%;background-color: aliceblue;">
+                  <b>Python</b>Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.
+
+                  It is used for:
+                  
+                  web development (server-side),
+                  software development,
+                  mathematics,
+                  system scripting.
+              </p>
+              <h1 style="background-color: aquamarine;">What can Python do?</h1>
+              <p style="padding: 0%;background-color: aliceblue;color: green;">
+                Python can be used on a server to create web applications.<br>
+                Python can be used alongside software to create workflows.<br>
+                Python can connect to database systems. It can also read and modify files.<br>
+                Python can be used to handle big data and perform complex mathematics.<br>
+                Python can be used for rapid prototyping, or for production-ready software development.<br>
+              </p>
+          </div>
+          <hr>
+          <div class="container-fluid">
+            <div style="background-color: darkgrey;padding: 20px;">
+              <h1 style="text-align: center;"><b>Application</b></h1>
+            </div> 
+          </div>
+          <div class="row">
+            <div class="col-5">
+                <img class="myImages"S src=data:image/png;base64,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 alt="Java" style="width:600px;height:440px;">
+                <div id="myModal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="img01">
+                    <div id="caption"></div>
+                </div>
+            </div>
+            <div class="col-s-7" style="text-align: center;">
+                <p style="padding: 0%;background-color: aliceblue;">
+                    Python is commonly used for developing websites and software, task automation, data analysis, and data visualisation. Since it's relatively easy to learn, Python has been adopted by many non-programmers, such as accountants and scientists, for a variety of everyday tasks, like organising finances.
+                </p>
+                <h1>What is the use of Python in real Life?</h1>
+                <p>Python is extensively applied in data science, data analysis, machine learning, data engineering, web development, software development, and other fields.</p>
+                <p><mark>for more information, please check the given links</mark></p>
+                <a href="https://en.wikipedia.org/wiki/Python_(programming_language)"><mark>link-1</mark></a>
+                <a href="https://www.codecademy.com/catalog/language/python"><mark>link-2</mark></a>
+                <a href="https://www.geeksforgeeks.org/python/"><mark>link-3</mark></a>
+            </div>
+            <hr>
+      </div>
+    </body>
+    <!----------------------for zoom image-map--------------------------------------->
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+            
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById("myImg");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        img.onclick = function(){
+          modal.style.display = "block";
+          modalImg.src = this.src;
+          captionText.innerHTML = this.alt;
+        }
+            
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+            
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+          modal.style.display = "none";
+        }
+    </script>
+    <!--------------------------------------scroll down ------------------------------------------>
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+        
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+    </script> 
+</html>
